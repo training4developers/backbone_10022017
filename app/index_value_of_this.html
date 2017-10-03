@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>My JavaScript Page</title>
+  </head>
+
+  <body>
+    <h1>Hello World!</h1>
+    <script>
+
+      'use strict';
+
+      function doIt() {
+        console.log(this);
+      }
+
+      doIt();
+      window.doIt();
+
+      var o = {
+        id: 2,
+        doIt: doIt,
+      }
+
+      o.doIt();
+
+      console.log(o.doIt === doIt);
+
+
+    </script>
+  </body>
+
+</html>

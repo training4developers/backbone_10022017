@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>My JavaScript Page</title>
+  </head>
+
+  <body>
+    <h1>Hello World!</h1>
+    <script>
+
+      'use strict';
+
+      setTimeout(function() {
+          t = 3;
+      }, 2000);
+
+      function outer() {
+
+        var t = 1;
+
+
+        return function inner() {
+          console.log(t);
+        };
+      }
+
+      var fn = outer();
+
+      fn();
+
+      setTimeout(function() {
+        fn();
+      }, 4000);
+      
+
+
+
+    </script>
+  </body>
+
+</html>

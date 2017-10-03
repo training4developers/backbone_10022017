@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>My JavaScript Page</title>
+  </head>
+
+  <body>
+    <h1>Hello World!</h1>
+    <script>
+
+      'use strict';
+
+      var carla = {
+        name: 'Carla',
+        amt: 2000,
+        address: {
+          city: 'Calgary',
+          province: 'AB'
+        }
+      };
+
+      var alice = Object.create(carla);
+      alice.name = 'Alice';
+
+      console.log(alice.amt);
+
+      carla.amt = 3000;
+      console.log(alice.amt);
+
+      alice.amt = 375;
+      console.log(alice.amt);
+
+      delete alice.amt;
+      console.log(alice.amt);
+
+      console.log(alice.address.city);
+      alice.address.city = 'Moscow';
+
+      console.log(carla.address.city);
+
+      console.log(alice);
+
+
+
+
+    </script>
+  </body>
+
+</html>

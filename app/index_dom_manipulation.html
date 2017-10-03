@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>My JavaScript Page</title>
+  </head>
+
+  <body>
+    <main>
+      <h1>Top 5 Things We Love About Canada!</h1>
+      <ul id="top-5-things">
+        <li data-kind="weather">snow</li>
+        <li data-kind="sports">hockey</li>
+        <li data-kind="weather" class="fav">summer</li>
+        <li class="fav" data-kind="sports">outdoor activities</li>
+        <li data-kind="lifestyle">healthcare</li>
+      </ul>
+    </main>
+    <script>
+
+      'use strict';
+
+      // var elements = document.querySelectorAll('li');
+      // var elements = document.querySelectorAll('.fav');
+      // var element = document.querySelector('#top-5-things');
+
+      // var elements = document.querySelectorAll('[data-kind=weather]');
+      // console.dir(elements);
+
+      var top5ThingsPoutine = document.createElement('ul');
+
+      var first = document.createElement('li');
+      first.innerText = 'gravy';
+
+      var second = document.createElement('li');
+      second.innerText = 'cheese curds';
+      
+      var third = document.createElement('li');
+      third.innerText = 'bacon';
+
+      var fourth = document.createElement('li');
+      fourth.innerText = 'veggies';
+
+      var fifth = document.createElement('li');
+      fifth.innerText = 'maple syrup';
+
+      top5ThingsPoutine.appendChild(first);
+      top5ThingsPoutine.appendChild(second);
+      top5ThingsPoutine.appendChild(third);
+      top5ThingsPoutine.appendChild(fourth);
+      top5ThingsPoutine.appendChild(fifth);
+
+      document.querySelector('main')
+        .appendChild(top5ThingsPoutine);
+
+
+    </script>
+  </body>
+
+</html>

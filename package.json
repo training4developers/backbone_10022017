@@ -7,6 +7,6 @@
     "json-server": "^0.10.1"
   },
   "scripts": {
-    "start": "json-server -w db.json" 
+    "start": "json-server -w db.json"
   }
 }

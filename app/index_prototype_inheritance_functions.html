@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>My JavaScript Page</title>
+  </head>
+
+  <body>
+    <h1>Hello World!</h1>
+    <script>
+
+      'use strict';
+
+      var person = {
+        walk: function() { console.log(this.name + ' is walking...'); },
+        run: function() { console.log(this.name + ' is running...'); },
+      };
+
+      var scott = Object.create(person);
+      scott.name = 'Scott';
+      //scott.walk = function() { console.log(this.name + ' to amazing walk, he carried around peoples shoulders'); }
+
+      var jenny = Object.create(person);
+      jenny.name = 'Jenny';
+
+      var miao = Object.create(person);
+      miao.name = 'Miao';
+
+      var tatiana = Object.create(person);
+      tatiana.name = 'Tatiana';
+
+      scott.walk();
+      jenny.walk();
+      console.log(scott.walk === jenny.walk);
+
+    </script>
+  </body>
+
+</html>
