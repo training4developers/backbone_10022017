@@ -17,7 +17,15 @@
     },
 
     addCar() {
-      console.log('clicked add car');
+      var newCar = {
+        make: $('#make-input').val(),
+        model: $('#model-input').val(),
+        year: $('#year-input').val(),
+        color: $('#color-input').val(),
+        price: $('#price-input').val(),
+      };
+
+      this.trigger('car-submitted', newCar);
     },
 
     template: function(data) {

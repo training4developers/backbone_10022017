@@ -9,7 +9,15 @@
     }
   
     window.App.Views.CarTable = Backbone.View.extend({
-      tagName: 'table',
+      tagName: 'div',
+
+      events: {
+        'click #add-car-button': 'addCar',
+      },
+
+      addCar: function() {
+        this.trigger('show-car-form');
+      },
 
       render: function() {
 
@@ -58,8 +66,12 @@
         var thead = $('<thead>');
         thead.append(headerRow);
 
-        this.$el.append(thead)
-        this.$el.append(tbody)
+        var table = $('<table>');
+        table.append(thead);
+        table.append(tbody);
+
+        this.$el.append(table)
+        this.$el.append('<button id="add-car-button">Add Car</button>');
         
         return this.$el;
 
