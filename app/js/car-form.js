@@ -12,6 +12,14 @@
 
     tagName: 'form',
 
+    events: {
+      'click #add-car-button': 'addCar',
+    },
+
+    addCar() {
+      console.log('clicked add car');
+    },
+
     template: function(data) {
       
       var templateStr = $('#car-form-template').html();

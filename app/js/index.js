@@ -23,6 +23,4 @@
   var carForm = new App.Views.CarForm({});
   $('main').append(carForm.render());
 
-
-
 })(window, $, Backbone, _);
