@@ -1,10 +1,27 @@
 (function(window, $, Backbone, _) {
 
-  var cars = [
-    { id: 1, make: 'Ford', model: 'Fusion', year: 2017, color: 'blue', price: 25000 },
-  ];
+  var Car = Backbone.Model.extend({
 
-  _.extend(cars, Backbone.Events);
+    defaults: {
+      make: '',
+      model: '',
+      year: 2018,
+      color: '',
+      price: 0,
+    },
+
+    formattedPrice: function() {
+      return '$' + this.get('price');
+    }
+
+  });
+
+  var Cars = Backbone.Collection.extend({});
+
+  var cars = new Cars();
+  cars.add(new Car({ id: 1, make: 'Ford', model: 'Fusion', year: 2017, color: 'blue', price: 25000 }));
+
+  console.dir(cars);
 
   cars.on('add-car', function(newCar) {
 
@@ -12,7 +29,7 @@
       return car.id
     })) + 1;
 
-    cars.push(newCar);
+    cars.add(new Car(newCar));
   });
 
 
@@ -30,19 +47,19 @@
     cars.forEach(function(car) {
 
       var makeCol = $('<td>');
-      makeCol.text(car.make);
+      makeCol.text(car.get('make'));
 
       var modelCol = $('<td>');
-      modelCol.text(car.model);
+      modelCol.text(car.get('model'));
 
       var yearCol = $('<td>');
-      yearCol.text(car.year);
+      yearCol.text(car.get('year'));
 
       var colorCol = $('<td>');
-      colorCol.text(car.color);
+      colorCol.text(car.get('color'));
 
       var priceCol = $('<td>');
-      priceCol.text(car.price);
+      priceCol.text(car.formattedPrice());
 
       var carRow = $('<tr>');
       carRow.append(makeCol);
