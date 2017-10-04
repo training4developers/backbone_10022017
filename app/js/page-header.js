@@ -1,4 +1,3 @@
-// IIFE - immediately invoked function expression
 (function(window, $, Backbone, _) {
 
   if (!window.App) {
@@ -12,8 +11,27 @@
   window.App.Views.PageHeader = Backbone.View.extend({
     tagName: 'header',
     id:'page-header',
+
+    template: function(data) {
+      
+      var templateStr = '<h1><%- headerText %></h1>' +
+      '<small><%- slogan %></small>';
+
+      if (!this._compiledTemplate) {
+        this._compiledTemplate = _.template(templateStr);
+      }
+
+      return this._compiledTemplate(data);
+    },
+
     render: function() {
-      this.$el.append('<h1>Car Tool</h1>');
+
+      var html = this.template({
+        headerText: 'Car Tool',
+        slogan: 'The best car lot in town.',
+      });
+
+      this.$el.append(html);
       return this.$el;
     }
   });
