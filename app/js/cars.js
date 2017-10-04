@@ -8,6 +8,9 @@
     window.App.Collections = {};
   }
 
-  window.App.Collections.Cars = Backbone.Collection.extend({});
+  window.App.Collections.Cars = Backbone.Collection.extend({
+    url: 'http://localhost:3000/cars',
+    model: App.Models.Car,
+  });
 
 })(window, $, Backbone, _)
