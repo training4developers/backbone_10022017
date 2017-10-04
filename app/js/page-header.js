@@ -14,8 +14,7 @@
 
     template: function(data) {
       
-      var templateStr = '<h1><%- headerText %></h1>' +
-      '<small><%- slogan %></small>';
+      var templateStr = $('#car-table-template').html();
 
       if (!this._compiledTemplate) {
         this._compiledTemplate = _.template(templateStr);
