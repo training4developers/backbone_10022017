@@ -17,6 +17,29 @@
           <h1><%- headerText %></h1>
           <small><%- slogan %></small>
         </script>
+        <script id="car-form-template" type="text/template">
+          <div>
+            <label for="make-input">Make:</label>
+            <input type="text" id="make-input" value="">
+          </div>
+          <div>
+              <label for="model-input">Model:</label>
+              <input type="text" id="model-input" value="">
+          </div>
+          <div>
+              <label for="year-input">Year:</label>
+              <input type="text" id="year-input" value="">
+          </div>
+          <div>
+              <label for="color-input">Color:</label>
+              <input type="text" id="color-input" value="">
+          </div>
+          <div>
+              <label for="price-input">Price:</label>
+              <input type="text" id="price-input" value="">
+          </div>
+          <button type="button" id="add-car-button">Add Car</button>
+        </script>
     </head>
 
     <body>
@@ -25,6 +48,7 @@
         <script src="js/cars.js"></script>
         <script src="js/page-header.js"></script>
         <script src="js/car-table.js"></script>
+        <script src="js/car-form.js"></script>
         <script src="js/index.js"></script>
     </body>
 
